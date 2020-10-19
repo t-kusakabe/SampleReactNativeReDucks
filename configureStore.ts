@@ -1,6 +1,6 @@
-import { combineReducers, createStore as reduxCreateStore } from "redux";
+import { combineReducers, createStore } from "redux";
 
-import CountReducer from "./modules/count";
+import { countReducer } from "./modules/count";
 
 declare global {
   interface IWindow {
@@ -8,14 +8,10 @@ declare global {
   }
 }
 
-const createStore = () => {
-  const store = reduxCreateStore(
-    combineReducers({
-      count: CountReducer,
-    })
-  );
+const store = createStore(
+  combineReducers({
+    count: countReducer
+  })
+);
 
-  return store;
-};
-
-export default createStore;
+export default store;
