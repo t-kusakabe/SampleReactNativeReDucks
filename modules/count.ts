@@ -11,7 +11,7 @@ const initialState: ICountState = {
   count: 0
 };
 
-export const countReducer = (state = initialState, action: IAction) => {
+export const countReducer = (state = initialState, action: IAction): ICountState => {
   switch (action.type) {
     case 'ADD_COUNT':
       return Object.assign({}, state, {
@@ -22,6 +22,6 @@ export const countReducer = (state = initialState, action: IAction) => {
   }
 };
 
-export const addCount = (count: number) => {
+export const addCount = (count: number): IAction => {
   return {type: 'ADD_COUNT', value: count};
 };
