@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 
 import CountComponent from '../components/count';
-import * as CountModule from '../modules/count';
+import * as countReducer from '../modules/count';
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: countReducer.ICountState) => {
   return {
     count: state.count
   };
 };
 
-const mapDispatchToProps = (dispatch: any) => {
+const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
-    ...bindActionCreators(CountModule, dispatch)
+    ...bindActionCreators(countReducer, dispatch)
   };
 };
 

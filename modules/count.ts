@@ -1,5 +1,5 @@
-const initialState = {
-  count: 0
+export interface ICountState {
+  count: number;
 };
 
 interface IAction {
@@ -7,7 +7,11 @@ interface IAction {
   value: number;
 }
 
-const reducer = (state = initialState, action: IAction) => {
+const initialState: ICountState = {
+  count: 0
+};
+
+export const countReducer = (state = initialState, action: IAction) => {
   switch (action.type) {
     case 'ADD_COUNT':
       return Object.assign({}, state, {
@@ -19,8 +23,5 @@ const reducer = (state = initialState, action: IAction) => {
 };
 
 export const addCount = (count: number) => {
-  console.log(count);
-  return { type: 'ADD_COUNT', value: count };
+  return {type: 'ADD_COUNT', value: count};
 };
-
-export default reducer;
