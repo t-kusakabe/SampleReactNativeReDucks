@@ -5,7 +5,7 @@ const Count = (props: any) => {
   return (
     <View>
       <Button title='+' onPress={ () => props.addCount(props.count.count) } />
-      <Text>Count : { props.count.count }</Text>
+      <Text>Count : {props.count.count}</Text>
     </View>
   );
 };
